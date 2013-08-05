@@ -35,17 +35,17 @@ class SDocSite::Automation::Ruby
     puts 'temp_dir: '+@tmp_path
     case version.minor
     when '8'
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_8_7_174 #{@tmp_path}`
+      `git clone https://github.com/ruby/ruby.git --depth 1 #{@tmp_path}; cd #{@tmp_path}; git checkout v1_8_7_174`
       in_tmp do
         run_sdoc_1_8 doc_dir
       end
     when '9'
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_9_1_0 #{@tmp_path}`
+      `git clone https://github.com/ruby/ruby.git --depth 1 #{@tmp_path}; cd #{@tmp_path}; git checkout v1_9_1_0`
       in_tmp do
         run_sdoc_1_9 doc_dir
       end
     when '0'
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v2_0_0_0 #{@tmp_path}`
+      `git clone https://github.com/ruby/ruby.git --depth 1 #{@tmp_path}; cd #{@tmp_path}; git checkout v2_0_0_247`
       in_tmp do
         run_sdoc_2_0 doc_dir
       end
