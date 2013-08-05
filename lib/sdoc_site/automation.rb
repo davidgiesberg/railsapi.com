@@ -301,7 +301,7 @@ protected
     require "sdoc_site/automation/eventmachine"
     @automations = []
     @automations << Automation::Ruby.new(self)
-    # @automations << Automation::Rails.new(self)
+    @automations << Automation::Rails.new(self)
     # @automations << Automation::Authlogic.new(self)
     # @automations << Automation::Awss3.new(self)
     # @automations << Automation::Eventmachine.new(self)
